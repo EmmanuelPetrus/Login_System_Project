@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <strings.h>
-#include <ctype.h>
-#include <conio.h>
-
-#define ENTER 13    // ASCII value for enter key
-#define TAB 9       // ASCII value for tab key
-#define BACKSPACE 8 // ASCII value for tab key
-#define BUFFER 25   // Upper bound for characters
+#include "login.h"
 
 typedef struct Detail person;
 struct Detail
@@ -20,6 +13,8 @@ struct Detail
     char pword[BUFFER];
     char pword2[BUFFER];
 };
+
+// function to take input
 void take_input(person *user, char n)
 {
     if ((n == 'n') || (n == 'e'))
@@ -51,6 +46,7 @@ void take_input(person *user, char n)
     }
 }
 
+// function to generate username
 void generate_username(person *user)
 {
     int i = 0;
@@ -67,6 +63,8 @@ void generate_username(person *user)
     }
     user->username[i] = '\0';
 }
+
+// function to take password
 void take_password(person *p_word, int n)
 {
     int k = 1;
@@ -75,6 +73,7 @@ void take_password(person *p_word, int n)
     {
         char password[15] = {0};
         char ch;
+        printf("\nYour Passwsord must not be more than 14 characters long\n");
         printf("%s your password: ", message);
 
         int i = 0;
@@ -125,6 +124,7 @@ void take_password(person *p_word, int n)
     }
 }
 
+// function to compare strings
 int compare_str(char a[], char b[])
 {
     int flag = 0, i = 0;                                                 // integer variables declaration
