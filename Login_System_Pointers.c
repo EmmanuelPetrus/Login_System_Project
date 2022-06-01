@@ -44,12 +44,12 @@ int main(void)
             {
                 if (!(fwrite(&info, sizeof(person), 1, fp)))
                 {
-                    fprintf(stderr, "%s", "Registration unsuccessfull");
+                    fprintf(stderr, "%s", "\nRegistration unsuccessfull");
                     break;
                 }
                 else
                 {
-                    printf("Registration Successfull");
+                    printf("\nRegistration Successfull");
                 }
             }
         }
